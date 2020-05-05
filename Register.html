@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel ="stylesheet" href ="estilo.css">
+
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="Login.html"> Ingresar </a></li>
+            <li>Contacto</li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <div class="tarjeta">
+        <header>
+            <h3>Registrarse</h3>
+        </header>
+        <form>
+            <div>
+                <label>Correo</label>
+                <input type="email" placeholder="correo@mail.com" required />
+            </div>
+            <div>
+                <label>Contrase&ntilde;a</label>
+                <input id="password" type="password" required minlength="4" maxlength="8" class="inputConError"/>
+            </div>
+            <div>
+                <label>Confirmar contrase&ntilde;a</label>
+                <input id="confirmacion" type="password" required minlength="4" maxlength="8" class="inputConError"/>
+            </div>
+            <div>
+                <label>Navegador Preferido </label>
+                <select required>
+                    <option disabled selected>Seleccione...</option>
+                    <option value="Mozilla_firefox">Mozilla Firefox</option>
+                    <option value="Google_chrome">Google Chrome</option>
+                    <option value="Microsoft_edge">Microsoft Edge</option>
+                    <option value="Opera">Opera</option>
+                    <option value="Safari">Safari</option>
+                </select>
+            </div>
+            <div>
+                <label>Descripci&oacute;n</label>
+                <textarea rows="8">Text Ejemplo</textarea>
+            </div>
+            <div>
+                <label>Edad</label>
+                <input type="number" min="1" max="150" step="any" required />
+            </div>
+            <div>
+                <label>Lenguaje de Programaci&oacute;n Preferido</label>
+                <input list="lenguajes" />
+                <datalist id="lenguajes">
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                </datalist>
+            </div>
+            <div>
+                <label>Fecha de hoy</label>
+                <output> 23/04/2020</output>
+            </div>
+            <button onclick="validarConfirmacion()">Registrarse</button>
+        </form>
+    </div>
+</section>
+
+
+
+<script>
+function getElement(id){
+return document.getElementById(id);
+
+}
+function validarConfirmacion(evento){
+
+const campoPassword = document.getElementById('password').classList.add('inputConError');
+const campoConfirmacion = document.getElementById('confirmacion').classList.add('inputConError');
+
+const password = document.getElementById('password').value;
+const confirmacion = document.getElementById('confirmacion').value;
+
+if(password != confirmacion){
+alert("confirmacion de contraseña incorrecta");
+campoPassword.classList.add('inputConError');
+campoConfirmacion.classList.add('inputConError');
+evento.preventDefault();
+} else {
+campoPassword.classList.add('inputConError');
+campoConfirmacion.classList.add('inputConError');
+}
+}
+
+document.getElementsById('registrarse').onclick = validarConfirmacion();
+</script>
+
+
+
+
+</body>
+</html>
