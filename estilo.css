@@ -1,0 +1,44 @@
+*{
+    font-family: verdana, serif, sans-serif;
+}
+body {
+    background-color: lightblue;
+}
+nav{
+    text-align: right;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    margin: 20px;
+    display: inline;
+}
+section{
+    justify-content: center;
+    padding: 120px;
+}
+.tarjeta{
+    background-color: white;
+    width: 750px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 11px 14px 3px -3px rgba(0,0,0,0.56);
+}
+input, select, textarea{
+    display: block;
+    width: 100%;
+    font-size: 150%
+}
+form div{
+    text-align: left;
+    margin: 20px;
+}
+
+.inputConError{
+    border-color: red;
+
+}
